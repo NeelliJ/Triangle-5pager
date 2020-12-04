@@ -1,0 +1,545 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1.15;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*-------VARIABLES-------*/
+/*--------MIXINS--------*/
+/*============Body & Typography============*/
+body {
+  background-color: blue;
+  color: antiquewhite;
+  font-family: Roboto, Helvetica, sans-serif;
+}
+
+h1 {
+  font-weight: 800;
+  font-size: 3.75rem;
+  font-family: Roboto, Helvetica, sans-serif;
+  display: inline;
+  text-shadow: 1px 1px 4px rgba(99, 6, 6, 0.4);
+}
+
+h2 {
+  font-weight: 300;
+  font-size: 3.75rem;
+  font-family: Roboto, Helvetica, sans-serif;
+}
+
+h3 {
+  font-weight: 300;
+  font-size: 1.5rem;
+  font-family: Roboto, Helvetica, sans-serif;
+  padding-bottom: 1.05rem;
+}
+
+@media (min-width: 575px) {
+  h3 {
+    font-size: 1.8rem;
+  }
+}
+
+h4 {
+  font-weight: 800;
+  font-size: 1.5rem;
+  font-family: Roboto, Helvetica, sans-serif;
+}
+
+h5 {
+  font-weight: 400;
+  font-size: 0.75rem;
+  font-family: Roboto, Helvetica, sans-serif;
+}
+
+.page-heading {
+  position: relative;
+  padding-top: 9rem;
+  color: antiquewhite;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.article-text {
+  padding: 2.1rem 0;
+  font-size: .9rem;
+  line-height: 1.5;
+}
+
+.article-text p {
+  padding: .75rem;
+}
+
+@media (min-width: 575px) {
+  .article-text {
+    font-size: 1.05rem;
+  }
+}
+
+.article-details {
+  width: 90%;
+  margin: .3em;
+  padding: .3em;
+  border-radius: 2px;
+}
+
+blockquote {
+  margin: .75rem .45rem;
+}
+
+blockquote p,
+.blockquote-footer {
+  font-weight: 400;
+  font-size: 1.8rem;
+  font-family: Roboto, Helvetica, sans-serif;
+  margin-top: 1rem;
+  color: red;
+  font-style: italic;
+  text-shadow: 0 0 2px rgba(99, 6, 6, 0.8);
+}
+
+@media (min-width: 575px) {
+  blockquote p,
+  .blockquote-footer {
+    font-weight: 300;
+    font-size: 2.25rem;
+    font-family: Roboto, Helvetica, sans-serif;
+  }
+}
+
+.blockquote-footer {
+  font-size: 1.5rem;
+}
+
+a {
+  color: antiquewhite;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #000099;
+}
+
+.active {
+  font-style: italic;
+  letter-spacing: 2px;
+}
+
+.btn {
+  background-color: blue;
+  border: 2px solid blue;
+  border-radius: 1px;
+}
+
+.btn:hover {
+  background-color: #000099;
+}
+
+/*============Menu============*/
+.page-header {
+  top: 0;
+  background-image: white;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(250, 250, 250, 0.8)), to(rgba(255, 255, 255, 0.7)));
+  background-image: linear-gradient(rgba(250, 250, 250, 0.8), rgba(255, 255, 255, 0.7));
+  border-bottom: 2px solid blue;
+}
+
+.page-header__gallery,
+.page-header__logo,
+.page-header__hello {
+  font-weight: 400;
+  font-size: 1.2rem;
+  font-family: Roboto, Helvetica, sans-serif;
+  padding: 1.2rem 0 0;
+  color: blue;
+}
+
+.page-header__hello {
+  visibility: hidden;
+}
+
+@media (min-width: 767px) {
+  .page-header__hello {
+    visibility: visible;
+  }
+}
+
+.dropdown-menu {
+  margin: .75rem 0 0 7%;
+  padding: 0;
+  background-color: white;
+  color: blue;
+  border: none;
+  border-radius: 1px;
+}
+
+.dropdown-item {
+  padding: .45rem 0;
+  color: blue;
+  font-size: 1.05rem;
+}
+
+.dropdown-item:hover {
+  background-color: antiquewhite;
+}
+
+/*============Footer============*/
+.page-footer {
+  margin-top: 5rem;
+  background-color: antiquewhite;
+  color: red;
+}
+
+.page-footer p, .page-footer li {
+  /*Break up long words*/
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  /*Add hyphen (sv bindestreck)*/
+  -ms-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.page-footer__about,
+.page-footer__contact {
+  top: 1.5rem;
+}
+
+.footer-link {
+  color: red;
+}
+
+.footer-link:hover {
+  text-decoration: none;
+  color: #990000;
+}
+
+section {
+  max-width: 100vw;
+}
+
+/*============Front Page============*/
+.home-bg {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/f/f8/El_Lissitzky%2C_Wendingen%2C_1921_%28published_1923%29%2C_NGA_93943.jpg");
+  background-color: antiquewhite;
+  height: 105vh;
+  background-position: center;
+  background-size: cover;
+  margin-top: 0;
+  position: relative;
+  /*National Gallery of Art, CC0, via Wikimedia Commons*/
+}
+
+@media (min-width: 767px) {
+  .home-bg {
+    max-height: 75vh;
+  }
+}
+
+.home-container {
+  display: block;
+  color: red;
+  padding: 10rem .75rem 0 0;
+}
+
+@media (min-width: 575px) {
+  .home-container {
+    padding: 9rem 0 0 3rem;
+  }
+}
+
+.card-item {
+  height: 440px;
+  position: relative;
+  top: -3rem;
+  padding: .15rem;
+}
+
+@media (min-width: 575px) {
+  .card-item {
+    padding: .9rem;
+  }
+}
+
+.card {
+  background-color: white;
+  color: blue;
+  font-size: 1.05rem;
+  border: 2px solid blue;
+}
+
+.card-img-top {
+  max-height: 45%;
+  overflow: hidden;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.card-body {
+  max-height: 51%;
+  width: 95%;
+  overflow: hidden;
+  padding: .6rem;
+  text-overflow: ellipsis;
+}
+
+.home-storylink {
+  font-weight: 400;
+  font-size: 2.25rem;
+  font-family: Roboto, Helvetica, sans-serif;
+  margin-top: -1.8rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/*=============Gallery===============*/
+.gallery-sections {
+  margin: .9rem 0;
+}
+
+@media (min-width: 575px) {
+  .gallery-sections {
+    margin: 6rem 0 1.2rem;
+  }
+}
+
+.gallery-sections__item {
+  font-weight: 400;
+  font-size: 2.25rem;
+  font-family: Roboto, Helvetica, sans-serif;
+  padding: .9rem 0;
+}
+
+.gallery-sections__item .dropdown-toggle {
+  font-size: 1.5rem;
+  padding-left: 3rem;
+}
+
+.gallery-sections__item .dropdown-item {
+  width: 12rem;
+  height: 2.1rem;
+  overflow: hidden;
+  padding: .5rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.gallery-sections__pic {
+  background-color: antiquewhite;
+  height: 1.75rem;
+  width: 1.75rem;
+  display: inline-block;
+  margin: 0 .9rem;
+}
+
+.gallery-sections__story {
+  background-color: red;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 .9rem;
+}
+
+.gallery-sections__proj {
+  color: gold;
+  display: inline-block;
+  font-weight: 800;
+  margin: 0 .9rem;
+}
+
+/*-----------Gallery Pictures------------*/
+.gallery-rows {
+  padding: 3rem .75rem;
+}
+
+@media (min-width: 575px) {
+  .gallery-rows {
+    padding: 3rem;
+  }
+}
+
+.gallery-item {
+  position: relative;
+  height: 300px;
+  margin-bottom: 1.5rem;
+  padding: .3rem;
+}
+
+.gallery-card__img {
+  max-height: 75%;
+}
+
+@media (min-width: 575px) {
+  .gallery-card__img {
+    max-height: 83%;
+  }
+}
+
+/*-----------Gallery Stories------------*/
+.glrystory-item {
+  height: 415px;
+  padding: 1.05rem .45rem 3rem;
+}
+
+@media (min-width: 575px) {
+  .glrystory-item {
+    height: 475px;
+  }
+}
+
+.glrystory-card__body {
+  padding: 0;
+}
+
+.glrystory-card__text {
+  font-size: .9rem;
+}
+
+.glrystory-card__img {
+  max-height: 85%;
+}
+
+@media (min-width: 575px) {
+  .glrystory-card__img {
+    max-height: 92%;
+  }
+}
+
+/*-----------About Page------------*/
+.about-bg {
+  background-image: url("../images/Rityta2100.svg");
+  background-color: blue;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  margin-top: 0;
+  position: relative;
+}
+
+.about-container {
+  display: block;
+  color: antiquewhite;
+  padding-bottom: 5rem;
+}
+
+.about-image {
+  max-width: 65%;
+  padding: 1.5rem;
+}
+
+.about-image:nth-of-type(odd) {
+  margin-left: 35%;
+}
+
+.about-footer {
+  margin-top: 0;
+}
+
+/*-----------Contact Page------------*/
+.contact-page {
+  background-color: antiquewhite;
+  color: blue;
+}
+
+.page-heading--con {
+  color: blue;
+}
+
+.contact-info {
+  padding: 2rem;
+  font-size: 1.2rem;
+  text-align: center;
+  border-bottom: 2px solid blue;
+  border-top: 2px solid blue;
+}
+
+@media (min-width: 767px) {
+  .contact-info {
+    padding: 2.1rem 0;
+    border-right: 2px solid blue;
+    border-top: none;
+    border-bottom: none;
+  }
+}
+
+.contact-info__image {
+  max-width: 90%;
+  padding: 2rem 0;
+}
+
+@media (min-width: 992px) {
+  .contact-info__image {
+    max-width: 65%;
+    padding: 1rem 0;
+  }
+}
+
+.contact-info ul {
+  margin-right: 1rem;
+}
+
+@media (min-width: 992px) {
+  .contact-info ul {
+    margin-right: 0;
+  }
+}
+
+form {
+  padding: 4rem 2rem;
+}
+
+@media (min-width: 992px) {
+  form {
+    padding: 4.5rem 5rem;
+  }
+}
+/*# sourceMappingURL=mystyle.css.map */
