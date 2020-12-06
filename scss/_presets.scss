@@ -1,0 +1,65 @@
+/*-------VARIABLES-------*/
+$primary-color: blue;
+$secondary-color: antiquewhite;
+$accent-color: red;
+$main-font: Roboto, Helvetica, sans-serif;
+$main-border: 2px solid $primary-color;
+$breakpoints: (
+  'small': 575px,
+  'medium':  767px,
+  'large': 992px
+) !default;
+
+/*--------MIXINS--------*/
+@mixin textlink-hover($decoration:none, $color:$primary-color){
+    text-decoration: $decoration;
+    color: darken($color,20%);
+}
+
+@mixin font-props($font-weight:400, $font-size:1.8rem) {
+    font-weight: $font-weight;
+    font-size: $font-size;
+    font-family: $main-font;
+}
+
+@mixin bg-image($url, $background-color:$primary-color, $height:85vh) {
+    background-image: url($url); 
+    background-color: $background-color;
+    height: $height;
+    background-position: center;
+    background-size: cover;
+    margin-top: 0;
+    position: relative;
+}
+
+@mixin container($textcolor: $accent-color) {
+    display: block;
+    color: $textcolor;
+}
+
+@mixin wordbreak {
+  /*Break up long words*/
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  /*Add hyphen (sv bindestreck)*/
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+@mixin respond-to($breakpoint) {
+    // If the key exists in the map
+    @if map-has-key($breakpoints, $breakpoint) {
+      // Prints a media query based on the value
+      @media (min-width: map-get($breakpoints, $breakpoint)) {
+        @content;
+      }
+    }
+
+      // If the key doesn't exist in the map
+    @else {
+        @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+            + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}

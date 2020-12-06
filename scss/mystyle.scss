@@ -1,0 +1,431 @@
+@import 'meyer-reset';
+@import 'presets';
+
+/*============Body & Typography============*/
+
+body {
+    background-color: $primary-color;
+    color: $secondary-color;
+    font-family: $main-font;
+}
+
+h1 {
+    @include font-props(800, 3.75rem);
+    display: inline;
+    text-shadow: 1px 1px 4px rgba(99, 6, 6, 0.4);;
+}
+
+h2 {
+    @include font-props(300, 3.75rem);
+}
+
+h3 {
+    @include font-props(300, 1.5rem);
+    padding-bottom: 1.05rem;
+
+    @include respond-to('small') {
+        font-size: 1.8rem;
+    }
+}
+
+h4 {
+    @include font-props(800, 1.5rem);
+}
+
+h5 {
+    @include font-props(400, .75rem);
+}
+
+.page-heading {
+    position: relative;
+    padding-top: 9rem;
+    color: $secondary-color;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.article-text {
+    padding: 2.1rem 0;
+    font-size: .9rem;
+    line-height: 1.5;
+
+    p {
+        padding: .75rem;
+    }
+
+    @include respond-to('small') {
+        font-size: 1.05rem;
+    }
+}
+
+.article-details {
+    width: 90%;
+    margin: .3em;
+    padding: .3em;
+    border-radius: 2px;
+}
+
+blockquote {
+    margin: .75rem .45rem;
+}
+
+blockquote p,
+.blockquote-footer {
+    @include font-props(400, 1.8rem);
+    margin-top: 1rem;
+    color: $accent-color;
+    font-style: italic;
+    text-shadow: 0 0 2px rgba(99, 6, 6, 0.8);
+
+    @include respond-to('small') {
+        @include font-props(300, 2.25rem);
+    }
+}
+
+.blockquote-footer {
+    font-size: 1.5rem;
+}
+
+a {
+    color: $secondary-color;
+
+    &:hover {
+        @include textlink-hover(none,$primary-color);
+    }
+}
+
+.active {
+    font-style: italic;
+    letter-spacing: 2px;
+}
+
+.btn {
+    background-color: $primary-color;
+    border: $main-border;
+    border-radius: 1px;
+
+    &:hover {
+        background-color: darken($primary-color, 20%);
+    }
+}
+
+
+/*============Menu============*/
+
+.page-header {
+    top: 0; 
+    background-image: lighten($secondary-color, 35%);
+    background-image: linear-gradient(rgba(250, 250, 250, .8), rgba(255, 255, 255, .7));
+    border-bottom: $main-border;
+}
+
+.page-header__gallery,
+.page-header__logo,
+.page-header__hello  {
+    @include font-props(400, 1.2rem);
+    padding: 1.2rem 0 0;
+    color: $primary-color;
+}
+
+.page-header__hello {
+    visibility: hidden;
+
+    @include respond-to('medium') {
+        visibility: visible;
+    }
+}
+
+.dropdown-menu { 
+    margin: .75rem 0 0 7%;
+    padding: 0;
+    background-color: white;
+    color: $primary-color;
+    border: none;
+    border-radius: 1px;
+}
+
+.dropdown-item {
+    padding: .45rem 0;
+    color: $primary-color;
+    font-size: 1.05rem;
+}
+
+.dropdown-item:hover {
+    background-color: $secondary-color;
+}
+
+
+/*============Footer============*/
+
+.page-footer {
+    margin-top: 5rem;
+    background-color: $secondary-color;
+    color: $accent-color;
+}
+
+.page-footer p, .page-footer li {
+    @include wordbreak;
+}
+
+.page-footer__about,
+.page-footer__contact {
+    top: 1.5rem;
+}
+
+.footer-link {
+    color: $accent-color;
+
+    &:hover {
+        @include textlink-hover(none,$accent-color);
+    }
+}
+
+section {
+    max-width: 100vw;
+}
+
+
+/*============Front Page============*/
+
+.home-bg {
+    @include bg-image("https://upload.wikimedia.org/wikipedia/commons/f/f8/El_Lissitzky%2C_Wendingen%2C_1921_%28published_1923%29%2C_NGA_93943.jpg", $secondary-color, 105vh);
+    /*National Gallery of Art, CC0, via Wikimedia Commons*/
+
+    @include respond-to('medium') {
+        max-height: 75vh;
+    }
+}
+
+.home-container {
+    @include container($accent-color);
+    padding: 10rem .75rem 0 0;
+
+    @include respond-to('small') {
+        padding: 9rem 0 0 3rem;
+    }
+}
+
+.card-item {
+    height: 440px;
+    position: relative;
+    top: -3rem;
+    padding: .15rem;  
+    
+    @include respond-to('small') {
+        padding: .9rem;
+    }
+}
+
+.card {
+    background-color: lighten($secondary-color, 20%);
+    color: $primary-color;
+    font-size: 1.05rem;
+    border: $main-border;
+}
+
+.card-img-top {
+    max-height: 45%;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.card-body {
+    max-height: 51%;
+    width: 95%;
+    overflow: hidden;
+    padding: .6rem;
+    text-overflow: ellipsis;
+}
+
+.home-storylink {
+    @include font-props(400, 2.25rem);
+    margin-top: -1.8rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+/*=============Gallery===============*/
+
+.gallery-sections {
+    margin: .9rem 0;
+
+    @include respond-to('small') {
+        margin: 6rem 0 1.2rem;
+    }
+}
+
+.gallery-sections__item {
+    @include font-props(400, 2.25rem);
+    padding: .9rem 0;
+
+    .dropdown-toggle {
+        font-size: 1.5rem;
+        padding-left: 3rem;
+    }
+
+    .dropdown-item {
+        width: 12rem;
+        height: 2.1rem;
+        overflow: hidden;
+        padding: .5rem;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+
+.gallery-sections__pic {
+    background-color: $secondary-color;
+    height: 1.75rem;
+    width: 1.75rem;
+    display: inline-block;
+    margin: 0 .9rem;
+}
+
+.gallery-sections__story {
+    background-color: $accent-color;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 .9rem;
+}
+
+.gallery-sections__proj {
+    color: gold;
+    display: inline-block;
+    font-weight: 800;
+    margin: 0 .9rem;
+}
+
+
+/*-----------Gallery Pictures------------*/
+
+.gallery-rows {
+    padding: 3rem .75rem;
+
+    @include respond-to('small') {
+        padding: 3rem;
+    }
+}
+
+.gallery-item {
+    position: relative;
+    height: 300px;
+    margin-bottom: 1.5rem;
+    padding: .3rem;
+}
+
+.gallery-card__img {
+    max-height: 75%;
+
+    @include respond-to('small') {
+        max-height: 83%;
+    }
+}
+
+
+/*-----------Gallery Stories------------*/
+
+.glrystory-item {
+    height: 415px;
+    padding: 1.05rem .45rem 3rem;
+
+    @include respond-to('small') {
+        height: 475px;
+    }
+}
+
+.glrystory-card__body {
+    padding: 0;
+}
+
+.glrystory-card__text {
+    font-size: .9rem;
+}
+
+.glrystory-card__img {
+    max-height: 85%;
+
+    @include respond-to('small') {
+        max-height: 92%;
+    }
+}
+
+
+/*-----------About Page------------*/
+
+.about-bg {
+    @include bg-image("../images/Rityta2100.svg", $primary-color, 100%);
+}
+
+.about-container {
+    @include container($secondary-color);
+    padding-bottom: 5rem;
+}
+
+.about-image {
+    max-width: 65%;
+    padding: 1.5rem;
+
+    &:nth-of-type(odd){
+        margin-left: 35%;
+    }
+}
+
+.about-footer {
+    margin-top: 0;
+}
+
+
+/*-----------Contact Page------------*/
+
+.contact-page {
+    background-color: $secondary-color;
+    color: $primary-color;
+}
+
+.page-heading--con {
+    color: $primary-color;
+}
+
+.contact-info {
+    padding: 2rem;
+    font-size: 1.2rem;
+    text-align: center;
+    border-bottom: $main-border;
+    border-top: $main-border;
+
+    @include respond-to('medium') {
+        padding: 2.1rem 0;
+        border-right: $main-border;
+        border-top: none;
+        border-bottom: none;
+    }
+}
+
+.contact-info__image {
+    max-width: 90%;
+    padding: 2rem 0;
+
+    @include respond-to('large') {
+        max-width: 65%;
+        padding: 1rem 0;
+    }
+}
+
+.contact-info ul {
+    margin-right: 1rem;
+
+    @include respond-to('large') {
+        margin-right: 0;
+    }
+}
+
+form {
+    padding: 4rem 2rem;
+
+    @include respond-to('large') {
+        padding: 4.5rem 5rem;
+    }
+}
